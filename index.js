@@ -4,7 +4,7 @@ require('dotenv').config();
 const mongoose=require("mongoose");
 const router=require("./Routes/faculty.js");
 const cors=require("cors");
-app.use("cors");
+app.use(cors());
 app.use(express.json());
 app.use("/",router);
 
