@@ -43,7 +43,7 @@ const addReview=async (req,res)=>{
     );
     if(currentFaculty){
           let average=0;
-          average=(Rating+((Review.length)*currentFaculty.averageReview))/(Review.length+1) 
+          average=(Rating+((currentFaculty.Review.length)*currentFaculty.averageReview))/(currentFaculty.Review.length+1) 
           currentFaculty.Review.push(Review);
           currentFaculty.averageReview=average;
           await currentFaculty.save();
