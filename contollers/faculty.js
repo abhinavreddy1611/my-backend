@@ -42,12 +42,8 @@ const addReview=async (req,res)=>{
         }
     );
     if(currentFaculty){
-          currentFaculty.averageReview.push(Rating);
           let average=0;
-          for(let i=0;i<averageReview.length;i++){
-                       average=average+averageReview[i];
-          }
-          average=average/averageReview.length;
+          average=(Rating+Review.length*currentFaculty.averageReview)/(Review.length+1) 
           currentFaculty.Review.push(Review);
           currentFaculty.averageReview=average;
           await currentFaculty.save();
